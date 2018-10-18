@@ -13,11 +13,12 @@
   <body oncontextmenu="return false;">
     <div id="framesrc"></div>
     <script type='text/javascript'>
-      var d = document, i = d.createElement('iframe'), s = window.location.search.replace(/\?url=/,'');
-      s.length < 45 ? s = 'https://www.dailymotion.com/embed/video/x6vnjcq' : s;
-      i.src = s + '?syndication=262260';
-      i.setAttribute('allowFullScreen','');
-      d.getElementById('framesrc').appendChild(i);
+      var d = document, f = d.createElement('iframe'), h = 'https://www.dailymotion.com/embed/video', i = window.location.search.replace(/\?id=/,''), s = window.location.search.replace(/\?url=/,'');
+      if(i.length>0){ i.length < 19 ? s = [h,'x6vnjcq'].join('/') : [h,i].join('/');}
+      if(s.length>0){ s.length < 45 ? s = [h,'x6vnjcq'].join('/') : s;}
+      f.src = s + '?syndication=262260';
+      f.setAttribute('allowFullScreen','');
+      d.getElementById('framesrc').appendChild(f);
     </script>
   </body>
 </html>
