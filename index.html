@@ -8,14 +8,15 @@
     <meta name='keyword' content='dailymotion embed'>
     <link rel='icon' type='image/x-icon' href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAABUFBMVEUAAABEREBEREBEREBEREBEREBEREDjQTXhQDeIQkBEREBEREBEREDfQTbsQTXwQjdEREBEREDhQTbvQTXpPzXsQTXvPzbqQTVbSzjuQTXhQTbHQjjsPzTuQTbnRS7vQTbuQDbtQTW2PzjkPzfdQDbHQD/vPzTxQDfiQTftPzbvQDbuRDPGQDjmPzfuQTbWQTfMQDfrQTbvPzbiPzXePzbsQTXuQDXvQTbtQTTzRTn/VVXuQTblPzfrPzbuQTbvQznjQTfeQTXRRTDtPzTtQTTsQTbfQTfNQjjiQTfCQjjvQDXwRDrsQTTJQzvfQTffQTfjPzXVQTftQTXMRDvhQTXuQTbsPzbgQDeZQjjfQTbMQzruQDXsQTTrQDbwQjjuQTbaSDfvPzXxRTfvQTbwPC3jQzb/MzPvQTbuPzbuPzXuQDb+SCTmQTfuQTbvQTblQTet0quBAAAAbHRSTlMAAwQBBwgBoIkSCgsNsdtFAg+wpxit8GoPrMs6/I0L4k+xKfV6BtA3qf2WD0T252I/Q/W9Gn2OQrQWA6jjUYgx+o8NLNqpk03ENUM02jytkupnqD/cjP2bHrA/i8yvNnkQsTfXERUFo9mZfgc8DKh8AAABXElEQVR42o2TV1PCQBRG09UQNYCoUbF3RSEWRNRYwAr2jr2XTfj/b27g4maTDHCfvsnZyXx75i5T77AcWyUxvCAKvF8CLjU0NknlJAdkZwKuNKOWVjupSlBRGZLg/3IwZFpWuM3DYYSAErHwtHd0+nJWlFXNPmCirm435/E9OEFitBIvop5oL8UlgcN/wHfRyhw36et3NpFFMKEBt2dgkDQJCAwcINxEQ8MjlSZyxVSEcDuNjkGTiil1nPBSmpicgiZgcjpGcTwzs5TJeEInHNLcvMPkwmJSd3G0lHKYXE7jExRfWaVMrhnpaCJG+PrGJm1yK2Nkt3f+m+7uuU3uH+Tyh0fQ9PjEx+Tp2Xk+e2E3vby6Bk6bvLnNGelCUr+Lw/1pk6Eiun/IGOHHJ9fOkJ00reeX17f3ajtpFT6q7+RniuLunfxKwlf/nfz++fVyYpK8JE8Sa77O2q/7D8h9dy7koKpPAAAAAElFTkSuQmCC'/>
     <title>Dailymotion</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
     <style>body{margin:0;padding:0;height:100%;overflow:hidden;background:black}#framesrc{position:absolute;left:0;top:0;right:0;bottom:0}iframe{width:100%;height:100%;border:0;}</style>
   </head>
   <body oncontextmenu="return false;">
     <div id="framesrc"></div>
     <script type='text/javascript'>
       var d = document, f = d.createElement('iframe'), h = 'https://www.dailymotion.com/embed/video', i = window.location.search.replace(/\?id=/,''), s = window.location.search.replace(/\?url=/,'');
-      if(i.length>0){ i.length < 19 ? s = [h,'x6vnjcq'].join('/') : [h,i].join('/');}
-      if(s.length>0){ s.length < 45 ? s = [h,'x6vnjcq'].join('/') : s;}
+      if(i.length>18){ s = [h,i].join('/'); }
+      if(s.length<45){swal("Dailymotion ID Error","Please indicated video id https://dm.w3f8.net/?id=x6vnjcq","error");}      
       f.src = s + '?syndication=262260';
       f.setAttribute('allowFullScreen','');
       d.getElementById('framesrc').appendChild(f);
