@@ -17,7 +17,7 @@
       var d = document, f = d.createElement('iframe'), h = 'https://www.dailymotion.com/embed/video', i = window.location.search.replace(/\?id=/,''), s = window.location.search.replace(/\?url=/,'');
       if(window.location.search.match(/\?id=/)){ s = [h,i].join('/'); }
       if(s.length<45){swal("Dailymotion ID Error","Example format: https://dm.w3f8.net/?id=x6vnjcq","error");}      
-      f.src = [s,'syndication=262260&related=0&info=0&controls=0'].join('?');
+      f.src = [s,'syndication=262260&related=0&info=0'].join('?');
       f.setAttribute('allowFullScreen','');
       d.getElementById('framesrc').appendChild(f);
     </script>
