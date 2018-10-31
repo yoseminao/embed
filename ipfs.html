@@ -10,14 +10,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/video.js/7.2.2/video.min.js"></script>
 </head>
 <body style="margin:0;width:100%;height:100%;overflow:hidden;background:#000;" oncontextmenu="return false;">
-    <div id="player" style="width:100%;height:100%;">
-    </div>
+    <div id="player"></div>
     <script>
         var d = document, v = d.createElement('video'), h = 'https://ipfs.renehsz.com/ipfs', i = window.location.search.replace(/\?id=/,'');
         if(i.length != 46) {i="QmQQr8xKjfVqX1BrRaSArDPJ8umG2rUw2eS8aZMkVr6A2g";}
         v.src = [h,i].join('/');
         v.setAttribute('controls','');
         v.setAttribute('crossorigin','anonymous');
+        v.setAttribute('style','width:100%;height:100%');
         d.getElementById('player').appendChild(v);
     </script>
 </body>
