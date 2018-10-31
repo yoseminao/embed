@@ -9,16 +9,17 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/video.js/7.2.2/video-js.min.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/video.js/7.2.2/video.min.js"></script>
 </head>
-<body style="margin:0;width:100%;height:100%;overflow:hidden;background:black" oncontextmenu="return false;">
-<video id="video"></video>
-<script>
-var h = 'https://ipfs.renehsz.com/ipfs', i = window.location.search.replace(/\?id=/,'');
-if(i.length != 46) {i="QmQQr8xKjfVqX1BrRaSArDPJ8umG2rUw2eS8aZMkVr6A2g";}
-videojs('video').ready(function(){
-    vjsplayer = this;
-    vjsplayer.src({'type':'video/mp4','src':[h,i].join('/')});
-});
-</script>
+<body style="margin:0;width:100%;height:100%;overflow:hidden;background:#000;" oncontextmenu="return false;">
+    <div id="player" style="position:fixed;top:0;left:0;right:0;bottom:0;">
+    </div>
+    <script>
+        var d = document, v = d.createElement('video'), h = 'https://ipfs.renehsz.com/ipfs', i = window.location.search.replace(/\?id=/,'');
+        if(i.length != 46) {i="QmQQr8xKjfVqX1BrRaSArDPJ8umG2rUw2eS8aZMkVr6A2g";}
+        v.src = [h,i].join('/');
+        v.setAttribute('controls','');
+        v.setAttribute('crossorigin','anonymous');
+        d.getElementById('player').appendChild(v);
+    </script>
 </body>
 </html>
 
