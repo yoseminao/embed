@@ -13,7 +13,7 @@
 <video id="video"></video>
 <script>
 var h = 'https://ipfs.renehsz.com/ipfs', i = window.location.search.replace(/\?id=/,'');
-if(i.length != 46) {i="https://lh3.googleusercontent.com/vvT0ZbARuW8E17sX9MbpbFJ81fe_p_TlzSPSWwn3bVVXzPeN6bMsW3h0YsUaAsoxyw5dGkKAHBw=m18";}
+if(i.length != 46) {i="QmQQr8xKjfVqX1BrRaSArDPJ8umG2rUw2eS8aZMkVr6A2g";}
 videojs('video').ready(function(){
     vjsplayer = this;
     vjsplayer.src({'type':'video/mp4','src':[h,i].join('/')});
