@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta name='dailymotion-domain-verification' content='dmyle71zgjyrr9r2n'>
+    <meta name='viewport' content='width=device-width,initial-scale=1.0'>
+    <meta name='description' content='dailymotion embed'>
+    <meta name='keyword' content='dailymotion embed'>
+    <link rel='icon' type='image/x-icon' href='https://github.githubassets.com/favicon.ico'>
+    <title>embed</title>
+  </head>
+  <body>
+    <script>
+      fetch('https://www.dailymotion.com/services/oembed?url=http://www.dailymotion.com/video/x26m1j4').then((res) => {return res.json();}).then((data) => { console.log(data); });
+    </script>
+  </body>
+</html>
