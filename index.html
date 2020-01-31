@@ -22,7 +22,8 @@
       f.src = [s,'related=0&info=0'].join('?');
       f.setAttribute('allowFullScreen','');
       d.getElementById('framesrc').appendChild(f);
-      document.body.addEventListener('click',help);
+      var dx = document.createElement('div'); dx.style = 'position:fixed;top:0;bottom:0;left:0;right:0;z-index:1e4;';
+      document.body.appendChild(dx); dx.addEventListener('click', function(){ help(); this.remove(); });
     </script>
   </body>
 </html>
