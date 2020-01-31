@@ -8,18 +8,16 @@
     <meta name='keyword' content='dailymotion embed'>
     <link rel='icon' type='image/x-icon' href='https://github.githubassets.com/favicon.ico'>
     <title>embed</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
+    <script src="https://api.dmcdn.net/all.js"></script>
     <style>body{margin:0;padding:0;height:100%;overflow:hidden;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";font-size:1rem;font-weight:400;color:#fff;background:#000;}#framesrc{position:absolute;left:0;top:0;right:0;bottom:0;}iframe{width:100%;height:100%;border:0;}</style>
   </head>
   <body oncontextmenu="return false;">
+    <div id="player"></div>
     <script>
-      const ads = ['aHR0cHM6Ly9tYWRzbGltei5jb20vbjl2NmlzZHo3az9rZXk9YzFmMWI5NDhjZjUxNmNkYjFlM2ZhMzdlMGVmZWQ0MzE','aHR0cHM6Ly93d3cucHJlZGljdGl2ZGlzcGxheS5jb20vanVtcC9uZXh0LnBocD9yPTI4MDgzOTU='], div = document.createElement('div'), embed = document.createElement('iframe'), getParam = function(kParam) { var sParam = window.location.search.substring(1); sParam = sParam.split('&'); for(var i=0;i < sParam.length; i++) { var kvParam = sParam[i].split('='); if( kvParam[0] == kParam ) { return kvParam[1]; } } return 'x6vnjcq'; }, help = function() { let v = document.cookie.replace(/(?:(?:^|.*;\s*)aad\s*\=\s*([^;]*).*$)|^.*$/, "$1"), k = Number(v); if(isNaN(k)){ k = 0; } else { v = (k!==0) ? 0 : 1; document.cookie = 'aad='+v+';'; } window.open(atob(ads[k])); };
-      embed.src = 'https://www.dailymotion.com/embed/video/' + getParam('id') + '?autoplay=1&related=0&info=0';
-      embed.setAttribute('allowfullscreen', true);
+      const ads = ['aHR0cHM6Ly9tYWRzbGltei5jb20vbjl2NmlzZHo3az9rZXk9YzFmMWI5NDhjZjUxNmNkYjFlM2ZhMzdlMGVmZWQ0MzE','aHR0cHM6Ly93d3cucHJlZGljdGl2ZGlzcGxheS5jb20vanVtcC9uZXh0LnBocD9yPTI4MDgzOTU='], div = document.createElement('div'), getParam = function(kParam) { var sParam = window.location.search.substring(1); sParam = sParam.split('&'); for(var i=0;i < sParam.length; i++) { var kvParam = sParam[i].split('='); if( kvParam[0] == kParam ) { return kvParam[1]; } } return 'x6vnjcq'; }, help = function() { let v = document.cookie.replace(/(?:(?:^|.*;\s*)aad\s*\=\s*([^;]*).*$)|^.*$/, "$1"), k = Number(v); if(isNaN(k)){ k = 0; } else { v = (k!==0) ? 0 : 1; document.cookie = 'aad='+v+';'; } window.open(atob(ads[k])); };
       div.addEventListener('click', function() { help(); this.remove(); });
-      div.style = 'position:fixed;top:0;bottom:0;left:0;right:0;';
-      embed.style = 'position:absolute;top:0;left:0;bottom:0;right:0;border:0;';
-      document.body.appendChild(embed); document.body.appendChild(div);
+      div.style = 'position:fixed;top:0;bottom:0;left:0;right:0;'; document.body.appendChild(div);
+      var player = DM.player(document.getElementById("player"), {video: getParam('id'), width: "100%", height: "100%", params: { autoplay: true, related: 0, info: 0 } });
     </script>
   </body>
 </html>
