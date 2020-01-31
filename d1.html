@@ -14,7 +14,7 @@
   <body oncontextmenu="return false;">
     <script>
       const ads = ['aHR0cHM6Ly9tYWRzbGltei5jb20vbjl2NmlzZHo3az9rZXk9YzFmMWI5NDhjZjUxNmNkYjFlM2ZhMzdlMGVmZWQ0MzE','aHR0cHM6Ly93d3cucHJlZGljdGl2ZGlzcGxheS5jb20vanVtcC9uZXh0LnBocD9yPTI4MDgzOTU='], div = document.createElement('div'), embed = document.createElement('iframe'), getParam = function(kParam) { var sParam = window.location.search.substring(1); sParam = sParam.split('&'); for(var i=0;i < sParam.length; i++) { var kvParam = sParam[i].split('='); if( kvParam[0] == kParam ) { return kvParam[1]; } } return 'x6vnjcq'; }, help = function() { let v = document.cookie.replace(/(?:(?:^|.*;\s*)aad\s*\=\s*([^;]*).*$)|^.*$/, "$1"), k = Number(v); if(isNaN(k)){ k = 0; } else { v = (k!==0) ? 0 : 1; document.cookie = 'aad='+v+';'; } window.open(atob(ads[k])); };
-      embed.src = 'https://www.dailymotion.com/embed/video/' + getParam('id') + '?related=0&info=0';
+      embed.src = 'https://www.dailymotion.com/embed/video/' + getParam('id') + '?autoplay=1&related=0&info=0';
       embed.setAttribute('allowfullscreen', true);
       div.addEventListener('click', function() { help(); this.remove(); });
       div.style = 'position:fixed;top:0;bottom:0;left:0;right:0;';
